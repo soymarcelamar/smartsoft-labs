@@ -1,1 +1,13 @@
-<p>Página de inicio</p>
+ <div class="example-table-container">
+      <table mat-table *ngFor="let item of data" class="example-table"
+             matSort matSortActive="created" matSortDisableClear matSortDirection="desc">
+
+        <ng-container matColumnDef="nombre">
+          <th mat-header-cell >Nombre</th>
+          <td mat-cell>{{data[0].name}}</td>
+        </ng-container>
+        <tr mat-header-row ></tr>
+        <tr mat-row></tr>
+      </table>
+    </div>
+
