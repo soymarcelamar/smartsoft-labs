@@ -1,0 +1,26 @@
+<div class="example-container">
+   <div>
+  <mat-form-field appearance="outline">
+    <mat-label>Ingresa tu correo electronico</mat-label>
+    <input matInput placeholder="mm@smartsoftlabs.com" [formControl]="email" required>
+    @if (email.invalid) {
+      <mat-error>{{getErrorMessageEmail()}}</mat-error>
+    }
+  </mat-form-field>
+</div>
+  <div>
+  <mat-form-field appearance="outline">
+    <mat-label>Ingresa tu contraseña</mat-label>
+    <input matInput [type]="hide ? 'password' : 'text'" placeholder="•••••••••••••" [formControl]="password" required>
+    @if (password.invalid) {
+      <mat-error>{{getErrorMessagePassword()}}</mat-error>
+    }
+    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+  </mat-form-field>
+</div>
+  <div class="example-button-row">
+    <button (click)="login()" mat-raised-button color="primary">Iniciar sesion</button>
+  </div>
+</div>
